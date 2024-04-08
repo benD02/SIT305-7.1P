@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentShowAdvert"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lost and Found Items"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lost Items"
+        android:textSize="20dp"
+        android:layout_marginRight="80dp"
+        android:fontFamily="sans-serif-light"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lost_items"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Found Items"
+        android:layout_marginRight="80dp"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-light"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_found_items"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"/>
+
+
+</LinearLayout>
