@@ -1,6 +1,7 @@
 package com.example.lostandfound;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,22 +49,17 @@ public class fragmentShowAdvert extends AppCompatActivity {
     }
 
     private void showItemDetails(AdvertItem item) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(item.getName());
-
-        // Construct the message (you could also use a custom layout)
-        String message = "Description: " + item.getDescription() +
-                "\nPhone: " + item.getPhone() +
-                "\nDate: " + item.getDate() +
-                "\nLocation: " + item.getLocation() +
-                "\nStatus: " + item.getStatus();
-        builder.setMessage(message);
-
-        builder.setPositiveButton("OK", (dialog, id) -> {
-            // User clicked OK button
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        Intent intent = new Intent(this, ItemDetailsActivityFragment.class);
+        intent.putExtra("id", item.getId()); // Use 'item', not 'selectedItem'
+        intent.putExtra("name", item.getName());
+        intent.putExtra("description", item.getDescription());
+        intent.putExtra("phone", item.getPhone()); // Ensure this data exists in AdvertItem
+        intent.putExtra("date", item.getDate()); // Ensure this data exists in AdvertItem
+        intent.putExtra("location", item.getLocation()); // Ensure this data exists in AdvertItem
+        intent.putExtra("status", item.getStatus()); // Ensure this data exists in AdvertItem
+        startActivity(intent);
     }
+
+
 
 }
